@@ -9,13 +9,13 @@ pipeline {
 	    sh "mvn clean install" 
       }  
      }
-      stage ("TestNG") {
+      stage ("Test") {
      steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+                sh './mvnw test' 
             }
             post {
-                success {
-                    junit 'target/surefire-reports/**/*.xml' 
+                always {
+                    junit '**target/surefire-reports/**/TEST-*.xml' 
                 }
             }
      }
