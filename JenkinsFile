@@ -26,12 +26,11 @@ pipeline {
                     }
                 }
             }
+			}
         stage ("Final") {
         steps {
         echo "Deployment Successfull"
         }
      }
-     
-    }
 }
 }
