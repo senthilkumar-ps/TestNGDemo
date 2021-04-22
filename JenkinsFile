@@ -31,5 +31,7 @@ pipeline {
         echo "Deployment Successfull"
         }
      }
+     
     }
+}
 }
