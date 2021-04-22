@@ -20,12 +20,16 @@ pipeline {
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
                     
                     script{
-                    if (currentBuild.currentResult == "SUCCESS") {
+                    if (currentBuild.currentResult != "SUCCESS") {
                     error "Pipeline aborted due to quality gate coverage failure"
                     }
                     }
                 }
             }
+        stage ("Final") {
+        steps {
+        echo "Deployment Successfull"
+        }
      }
     }
 }
