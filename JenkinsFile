@@ -16,6 +16,11 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/**/*.xml' 
+                    
+                    echo "Pipeline currentResult: ${currentBuild.currentResult}"
+                    
+                    // if (qualitygate.status != "OK") {
+                    
                 }
             }
      }
