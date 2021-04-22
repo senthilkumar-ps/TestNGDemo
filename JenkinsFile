@@ -18,9 +18,10 @@ pipeline {
                     junit 'target/surefire-reports/**/*.xml' 
                     
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
-                    
+                    script{
                     if (${currentBuild.currentResult} == "SUCCESS") {
                     error "Pipeline aborted due to quality gate coverage failure"
+                    }
                     }
                 }
             }
