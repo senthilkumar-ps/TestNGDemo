@@ -9,7 +9,7 @@ pipeline {
 	    sh "mvn clean install" 
       }  
      }
-      stage ("TestNG") {
+      stage ("Test") {
      steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install' 
             }
