@@ -1,13 +1,25 @@
 pipeline {
+
   agent any
+  
   tools { 
     maven 'maven 3.6.3' 
   }	
+  
   stages {
-    stage ("Build") {
+  
+  
+      stage ("Build") {
       steps {
 	    sh "mvn clean install" 
       }  
+      
+      stage ("TestNG") {
+      steps {
+	    sh "mvn clean install" 
+      }  
+      
+      
     }
   }
 }
