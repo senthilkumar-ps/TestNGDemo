@@ -19,8 +19,9 @@ pipeline {
                     
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
                     
-                    // if (qualitygate.status != "OK") {
-                    
+                    if (${currentBuild.currentResult} == "SUCCESS") {
+                    error "Pipeline aborted due to quality gate coverage failure"
+                    }
                 }
             }
      }
