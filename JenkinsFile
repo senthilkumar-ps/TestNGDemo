@@ -13,12 +13,13 @@ pipeline {
       steps {
 	    sh "mvn clean install" 
       }  
-      
+     }
+     
       stage ("TestNG") {
       steps {
 	    sh "mvn clean install" 
       }  
-      
+     }
       
     }
   }
