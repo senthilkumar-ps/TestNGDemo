@@ -2,11 +2,11 @@ package com.test;
 
 public class RandomEmailGenerator  {
 	public String generateMail() {
-		return "feedback@yoursite.com";
+		return "feedback";
 	}
 	
 	public String generateName() {
-		return "feedback@yoursite.com";
+		return "abc";
 	}
 	
 	public String generate() {
