@@ -1,16 +1,22 @@
 package com.test;
 
 public class RandomEmailGenerator  {
-	public String generateMail() {
-		return "feedback";
+	
+	static final String FEEDBACK = "feedback";
+	static final String NAME = "abc";
+	static final String MAIL = "feedback@yoursite.com";
+	
+	
+	public String generateFeedback() {
+		return FEEDBACK;
 	}
 	
 	public String generateName() {
-		return "abc";
+		return NAME;
 	}
 	
-	public String generate() {
-		return "feedback@yoursite.com";
+	public String generateMail() {
+		return MAIL;
 	}
 	
 	
