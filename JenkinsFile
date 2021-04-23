@@ -15,9 +15,9 @@ pipeline {
             }
             post {
                 always {
-                    // junit 'target/surefire-reports/**/*.xml'
+                    summary = junit 'target/surefire-reports/**/*.xml'
                     
-                    junit(testResults: '/target/surefire-reports/**/*.xml') 
+                    //junit(testResults: '/target/surefire-reports/**/*.xml') 
                     
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
                     
