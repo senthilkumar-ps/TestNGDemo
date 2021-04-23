@@ -21,14 +21,15 @@ pipeline {
                     
                     def summary = junit(testResults: 'target/surefire-reports/**/*.xml')
                     
-                    echo "Summary is ${summary}"
+                    echo "Summary is ${summary.totalCount}"
+                    
                     
                     
                     //junit(testResults: '/target/surefire-reports/**/*.xml') 
                     
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
                     
-                    echo "TestAction:${currentBuild.testResultAction}"
+                    //echo "TestAction:${currentBuild.testResultAction}"
                     
                     
                     if (currentBuild.currentResult != "SUCCESS") {
