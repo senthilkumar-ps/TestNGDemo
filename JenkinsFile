@@ -17,7 +17,9 @@ pipeline {
             post {
                 always {
                 script{
-                    def summary = junit 'target/surefire-reports/**/*.xml'
+                    // def summary = junit 'target/surefire-reports/**/*.xml'
+                    
+                    def summary = junit(testResults: 'target/surefire-reports/**/*.xml')
                     
                     echo "Summary is ${summary}"
                     
