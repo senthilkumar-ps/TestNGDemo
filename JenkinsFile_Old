@@ -1,0 +1,49 @@
+
+pipeline {
+  agent any
+  tools { 
+    maven 'maven 3.6.3' 
+  }
+  stages { 
+      stage ("Build") {
+      steps {
+	    sh "mvn clean install" 
+      }  
+     }
+      stage ("Test") {
+     steps {
+                sh 'mvn -Dmaven.test.failure.ignore=true install' 
+            }
+            post {
+                always {
+                script{
+                
+                    // def summary = junit 'target/surefire-reports/**/*.xml'
+                    
+                    def summary = junit(testResults: 'target/surefire-reports/**/*.xml')
+                    
+                    echo "Summary is ${summary.totalCount}"
+                    
+                    
+                    
+                    //junit(testResults: '/target/surefire-reports/**/*.xml') 
+                    
+                    echo "Pipeline currentResult: ${currentBuild.currentResult}"
+                    
+                    //echo "TestAction:${currentBuild.testResultAction}"
+                    
+                    
+                    if (currentBuild.currentResult != "SUCCESS") {
+                    error "Pipeline aborted due to quality gate coverage failure"
+                    }
+                    }
+                }
+            }
+			}
+        stage ("Final") {
+        steps {
+        echo "Deployment Successfull"
+        }
+     }
+}
+}
