@@ -1,6 +1,4 @@
 
-def summary = ""
-
 pipeline {
   agent any
   tools { 
@@ -18,7 +16,8 @@ pipeline {
             }
             post {
                 always {
-                    summary = junit 'target/surefire-reports/**/*.xml'
+                script{
+                    def summary = junit 'target/surefire-reports/**/*.xml'
                     
                     echo "Summary is ${summary}"
                     
@@ -27,7 +26,7 @@ pipeline {
                     
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
                     
-                    script{
+                    
                     if (currentBuild.currentResult != "SUCCESS") {
                     error "Pipeline aborted due to quality gate coverage failure"
                     }
