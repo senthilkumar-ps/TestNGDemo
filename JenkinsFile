@@ -20,7 +20,7 @@ pipeline {
                 always {
                     summary = junit 'target/surefire-reports/**/*.xml'
                     
-                    echo Summary is ${summary}"
+                    echo "Summary is ${summary}"
                     
                     
                     //junit(testResults: '/target/surefire-reports/**/*.xml') 
