@@ -18,6 +18,4 @@ public class RandomEmailGenerator  {
 	public String generateMail() {
 		return MAIL;
 	}
-	
-	
 }

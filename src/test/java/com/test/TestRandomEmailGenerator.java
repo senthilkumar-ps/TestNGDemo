@@ -9,7 +9,7 @@ public class TestRandomEmailGenerator {
 	public void testEmailGenerator() {
 
 		RandomEmailGenerator obj = new RandomEmailGenerator();
-		String email = obj.generate();
+		String email = obj.generateMail();
 
 		Assert.assertNotNull(email);
 		Assert.assertEquals(email, "feedback@yoursite.com");
@@ -18,10 +18,10 @@ public class TestRandomEmailGenerator {
 	}
 
 	@Test()
-	public void testMailGenerator() {
+	public void testFeedbackGenerator() {
 
 		RandomEmailGenerator obj = new RandomEmailGenerator();
-		String feed = obj.generateMail();
+		String feed = obj.generateFeedback();
 
 		Assert.assertNotNull(feed);
 		Assert.assertEquals(feed, "feedback");
