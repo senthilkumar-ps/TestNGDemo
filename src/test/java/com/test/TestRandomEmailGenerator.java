@@ -14,14 +14,21 @@ public class TestRandomEmailGenerator {
 		Assert.assertNotNull(email);
 		Assert.assertEquals(email, "feedback@yoursite.com");
 		Assert.assertTrue(true, "feedback@yoursite.com");
-//		Assert.assertFalse(true, "feedback");
-		
+		//		Assert.assertFalse(true, "feedback");
+
 		String feed = obj.generateMail();
-		
+
 		Assert.assertNotNull(feed);
 		Assert.assertEquals(feed, "feedback");
 		Assert.assertTrue(true, "feedback");
-		
+
+
+		String name = obj.generateName();
+
+		Assert.assertNotNull(name);
+		Assert.assertEquals(name, "abc");
+		Assert.assertTrue(true, "abc");
+
 	}
 
 }
