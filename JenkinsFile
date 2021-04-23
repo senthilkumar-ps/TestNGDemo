@@ -1,3 +1,6 @@
+
+def summary = ""
+
 pipeline {
   agent any
   tools { 
@@ -16,6 +19,9 @@ pipeline {
             post {
                 always {
                     summary = junit 'target/surefire-reports/**/*.xml'
+                    
+                    echo Summary is ${summary}"
+                    
                     
                     //junit(testResults: '/target/surefire-reports/**/*.xml') 
                     
