@@ -26,6 +26,8 @@ pipeline {
                     
                     echo "Pipeline currentResult: ${currentBuild.currentResult}"
                     
+                    echo "TestAction:${currentBuild.testResultAction}"
+                    
                     
                     if (currentBuild.currentResult != "SUCCESS") {
                     error "Pipeline aborted due to quality gate coverage failure"
