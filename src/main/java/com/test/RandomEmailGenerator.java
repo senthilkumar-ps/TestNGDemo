@@ -19,9 +19,11 @@ public class RandomEmailGenerator  {
 		return MAIL;
 	}
 
-	public int addtionNum(int num1, int num2) { 
-		
-		return num1*num2; 
-		
-	}
+	/*
+	 * public int addtionNum(int num1, int num2) {
+	 * 
+	 * return num1*num2;
+	 * 
+	 * }
+	 */
 }
