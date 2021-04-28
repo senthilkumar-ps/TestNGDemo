@@ -18,4 +18,8 @@ public class RandomEmailGenerator  {
 	public String generateMail() {
 		return MAIL;
 	}
+	
+	/*
+	 * public int addtionNum(int num1, int num2) { return num1*num2; }
+	 */
 }
