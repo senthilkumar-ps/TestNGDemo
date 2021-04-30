@@ -20,6 +20,6 @@ public class RandomEmailGenerator  {
 	}
 
 	public int addtionNum(int num1, int num2) {
-		return num1*num2;
+		return num1*num2; 
 	}
 }
